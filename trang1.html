@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng kết 1 năm</title>
+    <style>
+        /* Reset mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/19263.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* Header - Content - Footer */
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: bisque;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .container-left, .container-right {
+            width: 48%;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .image-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .image-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .image-slide.active {
+            opacity: 1;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        /* Nút "Tiếp tục" */
+        button.continue {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            font-size: 1.2rem;
+            border-radius: 30px;
+        }
+        button.continue:hover {
+            background-color: #c0392b;
+        }
+
+        /* Media Query */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .container-left, .container-right {
+                width: 100%;
+            }
+
+            .image-container {
+                height: 200px;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+
+            button.continue {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Tổng kết 1 năm của Thanh cute xinh gái</h1>
+
+    <div class="main-content">
+        <!-- Container bên trái -->
+        <div class="container-left">
+            <h2>Năm nay Thảo Anh đã đi du lịch được các nước</h2>
+            <div class="image-container">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/z6273242672446_fc12f4ed51fb6f7d9d0249c7ba6b724c.jpg" alt="Image 1" class="image-slide active">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/z6273242672546_de9f0e0c69d57247adfae7cb5f59776a.jpg" alt="Image 2" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/z6273242672652_deb67eddf964a86411569d304e1adc01.jpg" alt="Image 3" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/z6273242678488_fc1f81e993581afca00abfaf5e433f83.jpg" alt="Image 4" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/z6273242679471_470e948f39393e853f8d22b199837f7c.jpg" alt="Image 5" class="image-slide">
+
+            </div>
+            <div class="button-container">
+                <button onclick="previousImageLeft()">Back</button>
+                <button onclick="nextImageLeft()">Next</button>
+            </div>
+        </div>
+
+        <!-- Container bên phải -->
+        <div class="container-right">
+            <h2>Những tấm ảnh xinh xẻo của Thảo Anh</h2>
+            <div class="image-container">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/1.jpg" alt="Image 1" class="image-slide active">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/2.jpg" alt="Image 2" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/3.jpg" alt="Image 3" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/4.jpg" alt="Image 4" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/5.jpg" alt="Image 5" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/6.jpg" alt="Image 6" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/7.jpg" alt="Image 7" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/8.jpg" alt="Image 8" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/9.jpg" alt="Image 9" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/10.jpg" alt="Image 10" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/11.jpg" alt="Image 11" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/12.jpg" alt="Image 12" class="image-slide">
+                <img src="https://github.com/Ta0903/happyny-ta/raw/main/213.jpg" alt="Image 13" class="image-slide">
+            </div>
+            <div class="button-container">
+                <button onclick="previousImageRight()">Back</button>
+                <button onclick="nextImageRight()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="continue" onclick="window.location.assign('trang2.html')">Tiếp tục</button>
+
+    <script>
+        let currentImageIndexLeft = 0;
+        let currentImageIndexRight = 0;
+
+        const imagesLeft = document.querySelectorAll('.container-left .image-slide');
+        const imagesRight = document.querySelectorAll('.container-right .image-slide');
+
+        function showImage(images, index) {
+            images.forEach(image => image.classList.remove('active'));
+            images[index].classList.add('active');
+        }
+
+        function previousImageLeft() {
+          currentImageIndexLeft = (currentImageIndexLeft - 1 + imagesLeft.length) % imagesLeft.length;
+            showImage(imagesLeft, currentImageIndexLeft);
+        }
+
+        function nextImageLeft() {
+            currentImageIndexLeft = (currentImageIndexLeft + 1) % imagesLeft.length;
+            showImage(imagesLeft, currentImageIndexLeft);
+        }
+
+        function previousImageRight() {
+            currentImageIndexRight = (currentImageIndexRight - 1 + imagesRight.length) % imagesRight.length;
+            showImage(imagesRight, currentImageIndexRight);
+        }
+
+        function nextImageRight() {
+            currentImageIndexRight = (currentImageIndexRight + 1) % imagesRight.length;
+            showImage(imagesRight, currentImageIndexRight);
+        }
+    </script>
+</body>
+</html>
