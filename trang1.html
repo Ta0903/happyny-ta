@@ -56,16 +56,23 @@
 
         .image-container {
             position: relative;
-            height: 300px;
+            width: 90%;
+            height: 400px;
             overflow: hidden;
             border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            alalign-items: center;
+            background-color: #f0f0f0f0f0f0;
+            margin: auto;
         }
 
         .image-slide {
-            position: absolute;
-            width: 100%;
+           
+            width: auto;
             height: 100%;
             object-fit: cover;
+            position: absolute;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
